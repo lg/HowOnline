@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */; };
+		CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */; };
+		CBD49E811C29B63A00CE6004 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */; };
+		CBD49E8C1C29B63A00CE6004 /* HowOnlineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E8B1C29B63A00CE6004 /* HowOnlineTests.swift */; };
+		CBD49E971C29B63A00CE6004 /* HowOnlineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBD49E881C29B63A00CE6004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBD49E701C29B63A00CE6004 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBD49E771C29B63A00CE6004;
+			remoteInfo = HowOnline;
+		};
+		CBD49E931C29B63A00CE6004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBD49E701C29B63A00CE6004 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBD49E771C29B63A00CE6004;
+			remoteInfo = HowOnline;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CBD49E781C29B63A00CE6004 /* HowOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBD49E801C29B63A00CE6004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CBD49E821C29B63A00CE6004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBD49E871C29B63A00CE6004 /* HowOnlineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowOnlineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD49E8B1C29B63A00CE6004 /* HowOnlineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowOnlineTests.swift; sourceTree = "<group>"; };
+		CBD49E8D1C29B63A00CE6004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBD49E921C29B63A00CE6004 /* HowOnlineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowOnlineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowOnlineUITests.swift; sourceTree = "<group>"; };
+		CBD49E981C29B63A00CE6004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBD49E751C29B63A00CE6004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD49E841C29B63A00CE6004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD49E8F1C29B63A00CE6004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CBD49E6F1C29B63A00CE6004 = {
+			isa = PBXGroup;
+			children = (
+				CBD49E7A1C29B63A00CE6004 /* HowOnline */,
+				CBD49E8A1C29B63A00CE6004 /* HowOnlineTests */,
+				CBD49E951C29B63A00CE6004 /* HowOnlineUITests */,
+				CBD49E791C29B63A00CE6004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBD49E791C29B63A00CE6004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBD49E781C29B63A00CE6004 /* HowOnline.app */,
+				CBD49E871C29B63A00CE6004 /* HowOnlineTests.xctest */,
+				CBD49E921C29B63A00CE6004 /* HowOnlineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBD49E7A1C29B63A00CE6004 /* HowOnline */ = {
+			isa = PBXGroup;
+			children = (
+				CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */,
+				CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */,
+				CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */,
+				CBD49E821C29B63A00CE6004 /* Info.plist */,
+			);
+			path = HowOnline;
+			sourceTree = "<group>";
+		};
+		CBD49E8A1C29B63A00CE6004 /* HowOnlineTests */ = {
+			isa = PBXGroup;
+			children = (
+				CBD49E8B1C29B63A00CE6004 /* HowOnlineTests.swift */,
+				CBD49E8D1C29B63A00CE6004 /* Info.plist */,
+			);
+			path = HowOnlineTests;
+			sourceTree = "<group>";
+		};
+		CBD49E951C29B63A00CE6004 /* HowOnlineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */,
+				CBD49E981C29B63A00CE6004 /* Info.plist */,
+			);
+			path = HowOnlineUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBD49E771C29B63A00CE6004 /* HowOnline */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBD49E9B1C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnline" */;
+			buildPhases = (
+				CBD49E741C29B63A00CE6004 /* Sources */,
+				CBD49E751C29B63A00CE6004 /* Frameworks */,
+				CBD49E761C29B63A00CE6004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HowOnline;
+			productName = HowOnline;
+			productReference = CBD49E781C29B63A00CE6004 /* HowOnline.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CBD49E861C29B63A00CE6004 /* HowOnlineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBD49E9E1C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineTests" */;
+			buildPhases = (
+				CBD49E831C29B63A00CE6004 /* Sources */,
+				CBD49E841C29B63A00CE6004 /* Frameworks */,
+				CBD49E851C29B63A00CE6004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBD49E891C29B63A00CE6004 /* PBXTargetDependency */,
+			);
+			name = HowOnlineTests;
+			productName = HowOnlineTests;
+			productReference = CBD49E871C29B63A00CE6004 /* HowOnlineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CBD49E911C29B63A00CE6004 /* HowOnlineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBD49EA11C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineUITests" */;
+			buildPhases = (
+				CBD49E8E1C29B63A00CE6004 /* Sources */,
+				CBD49E8F1C29B63A00CE6004 /* Frameworks */,
+				CBD49E901C29B63A00CE6004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBD49E941C29B63A00CE6004 /* PBXTargetDependency */,
+			);
+			name = HowOnlineUITests;
+			productName = HowOnlineUITests;
+			productReference = CBD49E921C29B63A00CE6004 /* HowOnlineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBD49E701C29B63A00CE6004 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Larry Gadea";
+				TargetAttributes = {
+					CBD49E771C29B63A00CE6004 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					CBD49E861C29B63A00CE6004 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CBD49E771C29B63A00CE6004;
+					};
+					CBD49E911C29B63A00CE6004 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CBD49E771C29B63A00CE6004;
+					};
+				};
+			};
+			buildConfigurationList = CBD49E731C29B63A00CE6004 /* Build configuration list for PBXProject "HowOnline" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBD49E6F1C29B63A00CE6004;
+			productRefGroup = CBD49E791C29B63A00CE6004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBD49E771C29B63A00CE6004 /* HowOnline */,
+				CBD49E861C29B63A00CE6004 /* HowOnlineTests */,
+				CBD49E911C29B63A00CE6004 /* HowOnlineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBD49E761C29B63A00CE6004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */,
+				CBD49E811C29B63A00CE6004 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD49E851C29B63A00CE6004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD49E901C29B63A00CE6004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBD49E741C29B63A00CE6004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD49E831C29B63A00CE6004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD49E8C1C29B63A00CE6004 /* HowOnlineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD49E8E1C29B63A00CE6004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD49E971C29B63A00CE6004 /* HowOnlineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CBD49E891C29B63A00CE6004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBD49E771C29B63A00CE6004 /* HowOnline */;
+			targetProxy = CBD49E881C29B63A00CE6004 /* PBXContainerItemProxy */;
+		};
+		CBD49E941C29B63A00CE6004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBD49E771C29B63A00CE6004 /* HowOnline */;
+			targetProxy = CBD49E931C29B63A00CE6004 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBD49E801C29B63A00CE6004 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBD49E991C29B63A00CE6004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CBD49E9A1C29B63A00CE6004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CBD49E9C1C29B63A00CE6004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnline/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CBD49E9D1C29B63A00CE6004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnline/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CBD49E9F1C29B63A00CE6004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnlineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HowOnline.app/Contents/MacOS/HowOnline";
+			};
+			name = Debug;
+		};
+		CBD49EA01C29B63A00CE6004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnlineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HowOnline.app/Contents/MacOS/HowOnline";
+			};
+			name = Release;
+		};
+		CBD49EA21C29B63A00CE6004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnlineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HowOnline;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CBD49EA31C29B63A00CE6004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnlineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HowOnline;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBD49E731C29B63A00CE6004 /* Build configuration list for PBXProject "HowOnline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD49E991C29B63A00CE6004 /* Debug */,
+				CBD49E9A1C29B63A00CE6004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBD49E9B1C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD49E9C1C29B63A00CE6004 /* Debug */,
+				CBD49E9D1C29B63A00CE6004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CBD49E9E1C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD49E9F1C29B63A00CE6004 /* Debug */,
+				CBD49EA01C29B63A00CE6004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CBD49EA11C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD49EA21C29B63A00CE6004 /* Debug */,
+				CBD49EA31C29B63A00CE6004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBD49E701C29B63A00CE6004 /* Project object */;
+}
