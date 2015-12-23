@@ -26,43 +26,48 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func probe() {
-		if let interface = CWWiFiClient()?.interface() {
-			if interface.ssid() != nil {
-				if let ip = getWiFiAddress() {
-					if !ip.hasPrefix("169.254") && !ip.hasPrefix("0.0")  {
-						if let gatewayIP = defaultGateway() {
-							pinger = LGPinger(hostname: gatewayIP, successCb: { (timeElapsedMs) -> Void in
-								self.pinger = LGPinger(hostname: "8.8.8.8", successCb: { (timeElapsedMs) ->	Void in
-									self.pinger = LGPinger(hostname: "google.com", successCb: {	(timeElapsedMs) -> Void in
-										NSLog("success pinging google.com: %d", timeElapsedMs)
-										
-									}, errorCb: { () -> Void in
-										NSLog("failed pinging google")
-									})
-									self.pinger.ping()
-								}, errorCb: { () -> Void in
-									NSLog("no outside ping")
-								})
-								self.pinger.ping()
-							}, errorCb: { () -> Void in
-								NSLog("no router")
-							})
-							pinger.ping()
-						} else {
-							NSLog("no gateway")
-						}
-					} else {
-						NSLog("bad ip")
-					}
-				} else {
-					NSLog("no ip")
-				}
-			} else {
-				NSLog("no ssid")
-			}
-		} else {
-			NSLog("no wifi interface");
+		guard let interface = CWWiFiClient()?.interface() else {
+			NSLog("no wifi interface found")
+			return
 		}
+		
+		guard interface.ssid() != nil else {
+			NSLog("no ssid")
+			return
+		}
+		
+		guard let ip = getWiFiAddress() else {
+			NSLog("no ip")
+			return
+		}
+		
+		guard !ip.hasPrefix("169.254") && !ip.hasPrefix("0.0") else {
+			NSLog("bad ip")
+			return
+		}
+		
+		guard let gatewayIP = defaultGateway() else {
+			NSLog("no gateway")
+			return
+		}
+		
+		pinger = LGPinger(hostname: gatewayIP, successCb: { (timeElapsedMs) -> Void in
+			self.pinger = LGPinger(hostname: "8.8.8.8", successCb: { (timeElapsedMs) ->	Void in
+				self.pinger = LGPinger(hostname: "google.com", successCb: {	(timeElapsedMs) -> Void in
+					NSLog("success pinging google.com: %d", timeElapsedMs)
+					
+					}, errorCb: { () -> Void in
+						NSLog("failed pinging google")
+				})
+				self.pinger.ping()
+				}, errorCb: { () -> Void in
+					NSLog("no outside ping")
+			})
+			self.pinger.ping()
+			}, errorCb: { () -> Void in
+				NSLog("no router")
+		})
+		pinger.ping()
 	}
 		
 	func imageForStatus(text: String, percent: Float, color: NSColor, imageSize: NSSize) -> NSImage? {
@@ -87,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			paragraphStyle.alignment = .Center
 			
 			let attrs = [
-				NSFontAttributeName: NSFont.systemFontOfSize(10),
+				NSFontAttributeName: NSFont.systemFontOfSize(8),
 				NSParagraphStyleAttributeName: paragraphStyle
 			]
 			
