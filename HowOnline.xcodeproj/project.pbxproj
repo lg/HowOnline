@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB97624D1C2A5D69003590F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9762401C2A5CC2003590F3 /* QuartzCore.framework */; };
 		CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */; };
 		CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */; };
 		CBD49E811C29B63A00CE6004 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */; };
 		CBD49E8C1C29B63A00CE6004 /* HowOnlineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E8B1C29B63A00CE6004 /* HowOnlineTests.swift */; };
 		CBD49E971C29B63A00CE6004 /* HowOnlineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */; };
+		CBD49EA51C2A161500CE6004 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD49EA41C2A161500CE6004 /* CoreWLAN.framework */; };
+		CBD49EAA1C2A209E00CE6004 /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EA91C2A209E00CE6004 /* getgateway.c */; };
+		CBD49EAE1C2A2A2700CE6004 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EAD1C2A2A2700CE6004 /* Utilities.m */; };
+		CBD49EB01C2A2B8B00CE6004 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EAF1C2A2B8B00CE6004 /* Utilities.swift */; };
+		CBD49EB31C2A322D00CE6004 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EB11C2A322D00CE6004 /* SimplePing.m */; };
+		CBD49EB51C2A372D00CE6004 /* LGPinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EB41C2A372D00CE6004 /* LGPinger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB9762401C2A5CC2003590F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CBD49E781C29B63A00CE6004 /* HowOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +51,14 @@
 		CBD49E921C29B63A00CE6004 /* HowOnlineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowOnlineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowOnlineUITests.swift; sourceTree = "<group>"; };
 		CBD49E981C29B63A00CE6004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBD49EA41C2A161500CE6004 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
+		CBD49EA61C2A209D00CE6004 /* HowOnline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HowOnline-Bridging-Header.h"; sourceTree = "<group>"; };
+		CBD49EA91C2A209E00CE6004 /* getgateway.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getgateway.c; sourceTree = "<group>"; };
+		CBD49EAD1C2A2A2700CE6004 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		CBD49EAF1C2A2B8B00CE6004 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		CBD49EB11C2A322D00CE6004 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		CBD49EB21C2A322D00CE6004 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		CBD49EB41C2A372D00CE6004 /* LGPinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGPinger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB97624D1C2A5D69003590F3 /* QuartzCore.framework in Frameworks */,
+				CBD49EA51C2A161500CE6004 /* CoreWLAN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +91,8 @@
 		CBD49E6F1C29B63A00CE6004 = {
 			isa = PBXGroup;
 			children = (
+				CB9762401C2A5CC2003590F3 /* QuartzCore.framework */,
+				CBD49EA41C2A161500CE6004 /* CoreWLAN.framework */,
 				CBD49E7A1C29B63A00CE6004 /* HowOnline */,
 				CBD49E8A1C29B63A00CE6004 /* HowOnlineTests */,
 				CBD49E951C29B63A00CE6004 /* HowOnlineUITests */,
@@ -93,10 +113,15 @@
 		CBD49E7A1C29B63A00CE6004 /* HowOnline */ = {
 			isa = PBXGroup;
 			children = (
+				CBD49EB61C2A3FE100CE6004 /* Vendor */,
 				CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */,
 				CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */,
 				CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */,
 				CBD49E821C29B63A00CE6004 /* Info.plist */,
+				CBD49EA61C2A209D00CE6004 /* HowOnline-Bridging-Header.h */,
+				CBD49EAD1C2A2A2700CE6004 /* Utilities.m */,
+				CBD49EAF1C2A2B8B00CE6004 /* Utilities.swift */,
+				CBD49EB41C2A372D00CE6004 /* LGPinger.swift */,
 			);
 			path = HowOnline;
 			sourceTree = "<group>";
@@ -117,6 +142,16 @@
 				CBD49E981C29B63A00CE6004 /* Info.plist */,
 			);
 			path = HowOnlineUITests;
+			sourceTree = "<group>";
+		};
+		CBD49EB61C2A3FE100CE6004 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CBD49EB11C2A322D00CE6004 /* SimplePing.m */,
+				CBD49EB21C2A322D00CE6004 /* SimplePing.h */,
+				CBD49EA91C2A209E00CE6004 /* getgateway.c */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD49EAE1C2A2A2700CE6004 /* Utilities.m in Sources */,
+				CBD49EB51C2A372D00CE6004 /* LGPinger.swift in Sources */,
 				CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */,
+				CBD49EB01C2A2B8B00CE6004 /* Utilities.swift in Sources */,
+				CBD49EB31C2A322D00CE6004 /* SimplePing.m in Sources */,
+				CBD49EAA1C2A209E00CE6004 /* getgateway.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,11 +420,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HowOnline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HowOnline/HowOnline-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -392,11 +435,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HowOnline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HowOnline/HowOnline-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -471,6 +516,7 @@
 				CBD49E9D1C29B63A00CE6004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBD49E9E1C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +525,7 @@
 				CBD49EA01C29B63A00CE6004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBD49EA11C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineUITests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +534,7 @@
 				CBD49EA31C29B63A00CE6004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
