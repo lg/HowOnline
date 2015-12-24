@@ -16,8 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
 	var pinger: LGPinger! = nil
+	var refreshTimer: NSTimer! = nil
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
+		refreshTimer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "probe", userInfo: nil, repeats: true)
+		
 		probe()
 	}
 	
@@ -28,8 +31,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func probe() {
-		updateStatus("ping G", percent: 0.7, color: NSColor.redColor())
-		
 		guard let interface = CWWiFiClient()?.interface() else {
 			updateStatus("no wifi", percent: 0.1, color: NSColor.redColor())
 			return
