@@ -56,7 +56,8 @@ class LGPinger: NSObject, SimplePingDelegate {
 	}
 	
 	func simplePing(pinger: SimplePing!, didReceiveUnexpectedPacket packet: NSData!) {
-		NSLog("didReceiveUnexpectedPacket")
+		stopPinging()
+		self.errorCb()
 	}
 	
 	func simplePing(pinger: SimplePing!, didStartWithAddress address: NSData!) {
