@@ -8,6 +8,9 @@
 
 import Cocoa
 
+// TODO: about dialog
+// TODO: monitor reachability
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 
@@ -18,6 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	var prober: Prober!
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
+		let menu = NSMenu()
+		
+		menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+		
+		statusItem.menu = menu
+		
+		
 		refreshTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "probe", userInfo: nil, repeats: true)
 		prober = Prober(delegate: self)
 		probe()
@@ -27,10 +37,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 		if let button = statusItem.button {
 			switch result {
 			case .Success(let text):
-				button.image = imageForStatus(text!, percent: 1.0, color: NSColor.greenColor(), imageSize: button.frame.size)
+				button.image = imageForStatus(text!, filledBar: true, imageSize: button.frame.size)
 			case let .Failure(text):
-				button.image = imageForStatus(text, percent: 1.0, color: NSColor.redColor(), imageSize: button.frame.size)
+				button.image = imageForStatus(text, filledBar: false, imageSize: button.frame.size)
 			}
+			
+			// Make the icon black and white, but this will also auto reverse colors in Dark/highlighted mode
+			button.image!.template = true
 		}
 	}
 	
@@ -38,20 +51,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 		prober.probe()
 	}
 	
-	func imageForStatus(text: String, percent: Double, color: NSColor, imageSize: NSSize) -> NSImage? {
+	func imageForStatus(text: String, filledBar: Bool, imageSize: NSSize) -> NSImage? {
 		return NSImage(size: imageSize, flipped: false, drawingHandler: { (rect: NSRect) -> Bool in
-			// Use the same algo for both the border and fill of the progress bar
-			func genProgressBarRect(percent: CGFloat) -> CGRect {
-				let maxProgressBarWidth = rect.size.width - 2 - 2
-				return CGRect(x: 2, y: rect.size.height - 4 - 4, width: maxProgressBarWidth * percent, height: 4)
-			}
-		
-			// Fill first, then draw border on top
-			color.setFill()
-			NSBezierPath(roundedRect: genProgressBarRect(CGFloat(percent)), xRadius: 2, yRadius: 2).fill()
-			
+			NSColor.blackColor().setFill()
 			NSColor.blackColor().setStroke()
-			NSBezierPath(roundedRect: genProgressBarRect(1.0), xRadius: 2, yRadius: 2).stroke()
+			
+			let progressBarRect = CGRect(x: 2, y: rect.size.height - 4 - 4, width: rect.size.width - 2 - 2, height: 4)
+			let path = NSBezierPath(roundedRect: progressBarRect, xRadius: 2, yRadius: 2)
+			
+			path.stroke()
+			if filledBar {
+				path.fill()
+			}
 			
 			let textRect = CGRect(x: 0, y: 0, width: rect.size.width, height: rect.size.height - 8)
 			

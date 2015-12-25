@@ -46,6 +46,8 @@ class Prober {
 	}
 	
 	private func probeResult(result: ProbeResult) {
+		// TODO: on failure, maybe just reset?
+		
 		probing = false
 		
 		switch result {
