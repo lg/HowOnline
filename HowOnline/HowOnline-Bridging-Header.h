@@ -7,3 +7,6 @@
 #include "SimplePing.h"
 
 NSString* defaultGateway();
+
+typedef void (^ResolveCompleteBlock)(bool success);
+void testResolveHostname(NSString* hostName, ResolveCompleteBlock completeBlock);

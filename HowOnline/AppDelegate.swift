@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
 	var pinger: LGPinger! = nil
 	var refreshTimer: NSTimer! = nil
+	var probing: Bool = false
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		refreshTimer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "probe", userInfo: nil, repeats: true)
@@ -24,60 +25,81 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		probe()
 	}
 	
-	func updateStatus(text: String, percent: Double, color: NSColor) {
+	func probeResult(text: String, percent: Double, color: NSColor) {
+		// TODO: get rid of percent and just have it be a red bar
+		
 		if let button = statusItem.button {
 			button.image = imageForStatus(text, percent: percent, color: color, imageSize: button.frame.size)
 		}
+		
+		probing = false
 	}
 	
 	func probe() {
+		// TODO: trigger this when wifi status changes
+		// TODO: go backwards depending on where we are (so were not pinging all the other things so much)
+		
+		// Sometimes a ping from before could still be running. We wait for it to timeout.
+		if probing { return }
+		probing = true
+		
 		guard let interface = CWWiFiClient()?.interface() else {
-			updateStatus("no wifi", percent: 0.1, color: NSColor.redColor())
+			probeResult("no wifi", percent: 0.1, color: NSColor.redColor())
 			return
 		}
 		
 		guard interface.ssid() != nil else {
-			updateStatus("no ssid", percent: 0.2, color: NSColor.redColor())
+			probeResult("no ssid", percent: 0.2, color: NSColor.redColor())
 			return
 		}
 		
 		guard let ip = getWiFiAddress() else {
-			updateStatus("no ip", percent: 0.3, color: NSColor.redColor())
+			probeResult("no ip", percent: 0.3, color: NSColor.redColor())
 			return
 		}
 		
 		guard !ip.hasPrefix("169.254") && !ip.hasPrefix("0.0") else {
-			updateStatus("self ip", percent: 0.4, color: NSColor.redColor())
+			probeResult("self ip", percent: 0.4, color: NSColor.redColor())
 			return
 		}
 		
 		guard let gatewayIP = defaultGateway() else {
-			updateStatus("router", percent: 0.5, color: NSColor.redColor())
+			probeResult("no gate", percent: 0.5, color: NSColor.redColor())
 			return
 		}
+		
+		// TODO: look into a way to make this be synchronous
 		
 		pinger = LGPinger(hostname: gatewayIP, successCb: { (timeElapsedMs) -> Void in
 			self.pinger = LGPinger(hostname: "8.8.8.8", successCb: { (timeElapsedMs) ->	Void in
 				
-				// TODO: resolve google.com before trying to ping it (for better error messages). test it resolves correctly
-				
-				self.pinger = LGPinger(hostname: "google.com", successCb: {	(timeElapsedMs) -> Void in
-					self.updateStatus("\(timeElapsedMs)ms", percent: 1.0, color: NSColor.greenColor())
-					
-					}, errorCb: { () -> Void in
-						self.updateStatus("ping G", percent: 0.7, color: NSColor.redColor())
+				testResolveHostname("google.com", { (success) -> Void in
+					if success {
+						
+						self.pinger = LGPinger(hostname: "google.com", successCb: {	(timeElapsedMs) -> Void in
+							self.probeResult("\(timeElapsedMs)ms", percent: 1.0, color: NSColor.greenColor())
+							
+							}, errorCb: { () -> Void in
+								self.probeResult("ping G", percent: 0.7, color: NSColor.redColor())
+						})
+						self.pinger.ping()
+						
+					} else {
+						self.probeResult("dns", percent: 0.6, color: NSColor.redColor())
+					}
 				})
-				self.pinger.ping()
-				}, errorCb: { () -> Void in
-					self.updateStatus("ping 8.", percent: 0.6, color: NSColor.redColor())
+				
+			}, errorCb: { () -> Void in
+				self.probeResult("ping 8.", percent: 0.6, color: NSColor.redColor())
 			})
 			self.pinger.ping()
-			}, errorCb: { () -> Void in
-				self.updateStatus("ping rtr", percent: 0.5, color: NSColor.redColor())
+			
+		}, errorCb: { () -> Void in
+			self.probeResult("ping gate", percent: 0.5, color: NSColor.redColor())
 		})
 		pinger.ping()
 	}
-		
+	
 	func imageForStatus(text: String, percent: Double, color: NSColor, imageSize: NSSize) -> NSImage? {
 		return NSImage(size: imageSize, flipped: false, drawingHandler: { (rect: NSRect) -> Bool in
 			// Use the same algo for both the border and fill of the progress bar
