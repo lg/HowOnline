@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB8F4FDE1C2DA3F4009F0AB1 /* Prober.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */; };
 		CB97624D1C2A5D69003590F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9762401C2A5CC2003590F3 /* QuartzCore.framework */; };
 		CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */; };
 		CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prober.swift; sourceTree = "<group>"; };
 		CB9762401C2A5CC2003590F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CBD49E781C29B63A00CE6004 /* HowOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,13 +117,14 @@
 			children = (
 				CBD49EB61C2A3FE100CE6004 /* Vendor */,
 				CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */,
+				CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */,
+				CBD49EB41C2A372D00CE6004 /* LGPinger.swift */,
 				CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */,
 				CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */,
 				CBD49E821C29B63A00CE6004 /* Info.plist */,
 				CBD49EA61C2A209D00CE6004 /* HowOnline-Bridging-Header.h */,
 				CBD49EAD1C2A2A2700CE6004 /* Utilities.m */,
 				CBD49EAF1C2A2B8B00CE6004 /* Utilities.swift */,
-				CBD49EB41C2A372D00CE6004 /* LGPinger.swift */,
 			);
 			path = HowOnline;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				CBD49EB01C2A2B8B00CE6004 /* Utilities.swift in Sources */,
 				CBD49EB31C2A322D00CE6004 /* SimplePing.m in Sources */,
 				CBD49EAA1C2A209E00CE6004 /* getgateway.c in Sources */,
+				CB8F4FDE1C2DA3F4009F0AB1 /* Prober.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

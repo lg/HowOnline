@@ -10,59 +10,59 @@ import Foundation
 import QuartzCore
 
 class LGPinger: NSObject, SimplePingDelegate {
-	let pinger: SimplePing
-	let successCb: (timeElapsedMs: Int) -> Void
-	let errorCb: () -> Void
+	typealias CompletionBlock = (timeElapsedMs: Int?) -> ()
+	var completionBlock: CompletionBlock!
+
+	var pinger: SimplePing!
 	var timeoutTimer: NSTimer!
 	var pingStartTime: CFTimeInterval = 0
 	
-	init(hostname: String, successCb: (timeElapsedMs: Int) -> Void, errorCb: () -> Void) {
+	func ping(hostname: String, completionBlock: CompletionBlock) {
 		self.pinger = SimplePing(hostName: hostname)
-		self.successCb = successCb
-		self.errorCb = errorCb
-	}
-	
-	func ping() {
+		self.completionBlock = completionBlock
+		
 		pingStartTime = CACurrentMediaTime()
+		
 		pinger.delegate = self;
 		pinger.start()
 	}
 	
-	func stopPinging() {
+	func stopPinging(success: Bool) {
 		pinger.stop()
 		if timeoutTimer != nil {
 			timeoutTimer.invalidate()
 		}
+		
+		if success {
+			let elapsedTime = Int((CACurrentMediaTime() - pingStartTime) * 1000)
+			self.completionBlock(timeElapsedMs: elapsedTime)
+		} else {
+			self.completionBlock(timeElapsedMs: nil)
+		}
 	}
 	
 	func timeout() {
-		stopPinging()
-		self.errorCb()
+		stopPinging(false)
 	}
 	
 	func simplePing(pinger: SimplePing!, didFailToSendPacket packet: NSData!, error: NSError!) {
-		stopPinging()
-		self.errorCb()
+		stopPinging(false)
 	}
 	
 	func simplePing(pinger: SimplePing!, didFailWithError error: NSError!) {
-		stopPinging()
-		self.errorCb()
+		stopPinging(false)
 	}
 	
 	func simplePing(pinger: SimplePing!, didReceivePingResponsePacket packet: NSData!) {
-		stopPinging()
-		self.successCb(timeElapsedMs: Int((CACurrentMediaTime() - pingStartTime) * 1000))
+		stopPinging(true)
 	}
 	
 	func simplePing(pinger: SimplePing!, didReceiveUnexpectedPacket packet: NSData!) {
-		stopPinging()
-		self.errorCb()
+		stopPinging(false)
 	}
 	
 	func simplePing(pinger: SimplePing!, didStartWithAddress address: NSData!) {
-		pinger.sendPingWithData(nil)
-		
 		timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "timeout", userInfo: nil, repeats: false)
+		pinger.sendPingWithData(nil)
 	}
 }
