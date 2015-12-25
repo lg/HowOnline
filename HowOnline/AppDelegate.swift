@@ -25,11 +25,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		probe()
 	}
 	
-	func probeResult(text: String, percent: Double, color: NSColor) {
-		// TODO: get rid of percent and just have it be a red bar
-		
+	func probeResult(text: String, success: Bool) {
 		if let button = statusItem.button {
-			button.image = imageForStatus(text, percent: percent, color: color, imageSize: button.frame.size)
+			button.image = imageForStatus(text, percent: 1.0, color: success ? NSColor.greenColor() : NSColor.redColor(), imageSize: button.frame.size)
 		}
 		
 		probing = false
@@ -44,27 +42,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		probing = true
 		
 		guard let interface = CWWiFiClient()?.interface() else {
-			probeResult("no wifi", percent: 0.1, color: NSColor.redColor())
+			probeResult("wifi if", success: false)
 			return
 		}
 		
 		guard interface.ssid() != nil else {
-			probeResult("no ssid", percent: 0.2, color: NSColor.redColor())
+			probeResult("no wifi", success: false)
 			return
 		}
 		
 		guard let ip = getWiFiAddress() else {
-			probeResult("no ip", percent: 0.3, color: NSColor.redColor())
+			probeResult("no ip", success: false)
 			return
 		}
 		
 		guard !ip.hasPrefix("169.254") && !ip.hasPrefix("0.0") else {
-			probeResult("self ip", percent: 0.4, color: NSColor.redColor())
+			probeResult("self ip", success: false)
 			return
 		}
 		
 		guard let gatewayIP = defaultGateway() else {
-			probeResult("no gate", percent: 0.5, color: NSColor.redColor())
+			probeResult("no gw", success: false)
 			return
 		}
 		
@@ -77,25 +75,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 					if success {
 						
 						self.pinger = LGPinger(hostname: "google.com", successCb: {	(timeElapsedMs) -> Void in
-							self.probeResult("\(timeElapsedMs)ms", percent: 1.0, color: NSColor.greenColor())
+							self.probeResult("\(timeElapsedMs)ms", success: true)
 							
 							}, errorCb: { () -> Void in
-								self.probeResult("ping G", percent: 0.7, color: NSColor.redColor())
+								self.probeResult("ping G", success: false)
 						})
 						self.pinger.ping()
 						
 					} else {
-						self.probeResult("dns", percent: 0.6, color: NSColor.redColor())
+						self.probeResult("dns", success: false)
 					}
 				})
 				
 			}, errorCb: { () -> Void in
-				self.probeResult("ping 8.", percent: 0.6, color: NSColor.redColor())
+				self.probeResult("ping 8.", success: false)
 			})
 			self.pinger.ping()
 			
 		}, errorCb: { () -> Void in
-			self.probeResult("ping gate", percent: 0.5, color: NSColor.redColor())
+			self.probeResult("ping gw", success: false)
 		})
 		pinger.ping()
 	}
@@ -105,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			// Use the same algo for both the border and fill of the progress bar
 			func genProgressBarRect(percent: CGFloat) -> CGRect {
 				let maxProgressBarWidth = rect.size.width - 2 - 2
-				return CGRect(x: 2, y: rect.size.height - 4 - 2, width: maxProgressBarWidth * percent, height: 4)
+				return CGRect(x: 2, y: rect.size.height - 4 - 4, width: maxProgressBarWidth * percent, height: 4)
 			}
 		
 			// Fill first, then draw border on top
