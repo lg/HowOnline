@@ -7,9 +7,9 @@
 //
 
 import Cocoa
+import ReachabilitySwift
 
 // TODO: about dialog
-// TODO: monitor reachability
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
@@ -18,19 +18,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	
 	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
 	var refreshTimer: NSTimer! = nil
+	var reachability: Reachability?
 	var prober: Prober!
 	
-	func applicationDidFinishLaunching(aNotification: NSNotification) {
+	func applicationDidFinishLaunching(aNotification: NSNotification) {	
 		let menu = NSMenu()
-		
 		menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
-		
 		statusItem.menu = menu
 		
+		startReachability()
 		
 		refreshTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "probe", userInfo: nil, repeats: true)
 		prober = Prober(delegate: self)
 		probe()
+	}
+	
+	func startReachability() {
+		let refreshBlock: (Reachability) -> () = { reachability in
+			dispatch_async(dispatch_get_main_queue()) {
+				self.probe()
+			}
+		}
+		
+		do {
+			// We dont need any more sophistication than just checking for a wifi connection
+			// since we do our own internet connection checking
+			let reachability = try Reachability.reachabilityForLocalWiFi()
+			self.reachability = reachability
+			
+			reachability.whenReachable = refreshBlock
+			reachability.whenUnreachable = refreshBlock
+			try reachability.startNotifier()
+		} catch {
+			print("Unable to create Reachability")
+			return
+		}
 	}
 	
 	func probeResult(prober: Prober, result: Prober.ProbeResult) {
@@ -64,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 				path.fill()
 			}
 			
-			let textRect = CGRect(x: 0, y: 0, width: rect.size.width, height: rect.size.height - 8)
+			let textRect = CGRect(x: 0, y: 0, width: rect.size.width, height: rect.size.height - 9)
 			
 			// The text needs to be really small to fit
 			let paragraphStyle = NSMutableParagraphStyle()
