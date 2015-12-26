@@ -10,7 +10,8 @@ A quick app to display your current ping to google.com or detailed error info (s
 - When online, live ping of google.com to ensure connectivity
 - Status refreshes automatically on WiFi adapter state change or every 3 seconds
 - Optimized for performance and minimal power usage (doesn't unnecessarily check everything every time)
-- Free and opensource (please contribute!)
+- Support for both Dark and Light menu bars
+- Free and opensource (please contribute! also, please verify my Swift design patterns, I'm still learning!)
 
 ### Statuses the app will give you
 - `wifi if`: Couldn't detect a WiFi interface on your Mac
@@ -26,9 +27,15 @@ A quick app to display your current ping to google.com or detailed error info (s
 - *a number in miliseconds*: Your live ping to google.com
 
 ### Still to do
+- Tests
 - Get an icon made
 - Have an About dialog
 - List on the Mac App Store for free
 
 ### License
 BSD
+
+### Contact
+Larry Gadea, trivex@gmail.com
+
+Oh and check out the other thing I work on, [Envoy](https://envoy.co)!
