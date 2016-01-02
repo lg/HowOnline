@@ -9,7 +9,7 @@
 import Foundation
 import QuartzCore
 
-class LGPinger: NSObject, SimplePingDelegate {
+class Pinger: NSObject, SimplePingDelegate {
 	typealias CompletionBlock = (timeElapsedMs: Int?) -> ()
 	var completionBlock: CompletionBlock!
 

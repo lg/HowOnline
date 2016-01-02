@@ -20,7 +20,7 @@
 		CBD49EAE1C2A2A2700CE6004 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EAD1C2A2A2700CE6004 /* Utilities.m */; };
 		CBD49EB01C2A2B8B00CE6004 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EAF1C2A2B8B00CE6004 /* Utilities.swift */; };
 		CBD49EB31C2A322D00CE6004 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EB11C2A322D00CE6004 /* SimplePing.m */; };
-		CBD49EB51C2A372D00CE6004 /* LGPinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EB41C2A372D00CE6004 /* LGPinger.swift */; };
+		CBD49EB51C2A372D00CE6004 /* Pinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EB41C2A372D00CE6004 /* Pinger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 		CBD49EAF1C2A2B8B00CE6004 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CBD49EB11C2A322D00CE6004 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
 		CBD49EB21C2A322D00CE6004 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
-		CBD49EB41C2A372D00CE6004 /* LGPinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGPinger.swift; sourceTree = "<group>"; };
+		CBD49EB41C2A372D00CE6004 /* Pinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinger.swift; sourceTree = "<group>"; };
 		CC39FDD97823DFC033D8E8C8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E78743DDC081BE17430472CC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2C277CF31C2762CEFF7F07 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				CBD49EB61C2A3FE100CE6004 /* Vendor */,
 				CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */,
 				CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */,
-				CBD49EB41C2A372D00CE6004 /* LGPinger.swift */,
+				CBD49EB41C2A372D00CE6004 /* Pinger.swift */,
 				CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */,
 				CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */,
 				CBD49E821C29B63A00CE6004 /* Info.plist */,
@@ -363,7 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD49EAE1C2A2A2700CE6004 /* Utilities.m in Sources */,
-				CBD49EB51C2A372D00CE6004 /* LGPinger.swift in Sources */,
+				CBD49EB51C2A372D00CE6004 /* Pinger.swift in Sources */,
 				CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */,
 				CBD49EB01C2A2B8B00CE6004 /* Utilities.swift in Sources */,
 				CBD49EB31C2A322D00CE6004 /* SimplePing.m in Sources */,

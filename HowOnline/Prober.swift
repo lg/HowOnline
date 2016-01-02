@@ -20,7 +20,7 @@ class Prober {
 	}
 	
 	var delegate: ProberDelegate
-	var pinger: LGPinger!
+	var pinger: Pinger!
 	var gatewayIP: String!
 	
 	var lastFailure: ProbeResult?
@@ -79,8 +79,8 @@ class Prober {
 	}
 	
 	private func pingProbe(ip: String, errorText: String) {
-		pinger = LGPinger()
-		pinger.ping(ip) { (timeElapsedMs) -> () in
+		pinger = Pinger()
+		pinger.ping(ip) { [unowned self] (timeElapsedMs) -> () in
 			if timeElapsedMs == nil {
 				self.probeResult(.Failure(text: errorText))
 				return
@@ -136,7 +136,7 @@ class Prober {
 	}
 	
 	private func resolveGoogle() {
-		testResolveHostname("google.com") { (success) -> Void in
+		testResolveHostname("google.com") { [unowned self] (success) -> Void in
 			if !success {
 				self.probeResult(.Failure(text: "dns"))
 				return
