@@ -15,19 +15,22 @@ import ReachabilitySwift
 class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 
 	@IBOutlet weak var window: NSWindow!
+	@IBOutlet weak var aboutTitle: NSTextField!
 	
 	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
 	var refreshTimer: NSTimer! = nil
 	var reachability: Reachability?
 	var prober: Prober!
-	let statusMenuItem = NSMenuItem()
+	let statusMenuItem = NSMenuItem(title: "Status: OK", action: nil, keyEquivalent: "")
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
-		statusMenuItem.title = "Status: OK"
+		let info = NSBundle.mainBundle().infoDictionary!
+		aboutTitle.stringValue = "\(info["CFBundleName"]!) v\(info["CFBundleShortVersionString"]!) (\(info["CFBundleVersion"]!))"
 		
 		let menu = NSMenu()
 		menu.addItem(statusMenuItem)
 		menu.addItem(NSMenuItem.separatorItem())
+		menu.addItemWithTitle("About", action: Selector("about"), keyEquivalent: "")
 		menu.addItemWithTitle("Quit", action: Selector("terminate:"), keyEquivalent: "q")
 		statusItem.menu = menu
 		
@@ -36,6 +39,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 		refreshTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "probe", userInfo: nil, repeats: true)
 		prober = Prober(delegate: self)
 		probe()
+	}
+	
+	func about() {
+		window.makeKeyAndOrderFront(nil)
 	}
 	
 	func startReachability() {
