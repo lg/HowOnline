@@ -20,10 +20,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	var refreshTimer: NSTimer! = nil
 	var reachability: Reachability?
 	var prober: Prober!
+	let statusMenuItem = NSMenuItem()
 	
-	func applicationDidFinishLaunching(aNotification: NSNotification) {	
+	func applicationDidFinishLaunching(aNotification: NSNotification) {
+		statusMenuItem.title = "Status: OK"
+		
 		let menu = NSMenu()
-		menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+		menu.addItem(statusMenuItem)
+		menu.addItem(NSMenuItem.separatorItem())
+		menu.addItemWithTitle("Quit", action: Selector("terminate:"), keyEquivalent: "q")
 		statusItem.menu = menu
 		
 		startReachability()
@@ -58,10 +63,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	func probeResult(prober: Prober, result: Prober.ProbeResult) {
 		if let button = statusItem.button {
 			switch result {
-			case .Success(let text):
-				button.image = imageForStatus(text!, filledBar: true, imageSize: button.frame.size)
-			case let .Failure(text):
+			case let .Success(text, longText):
+				button.image = imageForStatus(text, filledBar: true, imageSize: button.frame.size)
+				statusMenuItem.title = "Status: \(longText)"
+		
+			case let .Failure(text, longText):
 				button.image = imageForStatus(text, filledBar: false, imageSize: button.frame.size)
+				statusMenuItem.title = "Status: \(longText)"
 			}
 			
 			// Make the icon black and white, but this will also auto reverse colors in Dark/highlighted mode
