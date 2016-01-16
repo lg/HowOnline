@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prober.swift; sourceTree = "<group>"; };
 		CB9762401C2A5CC2003590F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CBCFAEBE1C4AFEC500163967 /* HowOnline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HowOnline.entitlements; sourceTree = "<group>"; };
 		CBD49E781C29B63A00CE6004 /* HowOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		CBD49E7A1C29B63A00CE6004 /* HowOnline */ = {
 			isa = PBXGroup;
 			children = (
+				CBCFAEBE1C4AFEC500163967 /* HowOnline.entitlements */,
 				CBD49EB61C2A3FE100CE6004 /* Vendor */,
 				CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */,
 				CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */,
@@ -205,6 +207,11 @@
 				TargetAttributes = {
 					CBD49E771C29B63A00CE6004 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					CBD49E861C29B63A00CE6004 = {
 						CreatedOnToolsVersion = 7.2;
@@ -429,6 +436,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HowOnline/HowOnline.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HowOnline/Info.plist;
@@ -446,6 +455,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HowOnline/HowOnline.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = HowOnline/Info.plist;
