@@ -28,7 +28,6 @@ A quick app to display your current ping to google.com or detailed error info (s
 
 ### Still to do
 - Tests
-- Have an About dialog
 - List on the Mac App Store for free
 
 ### License
