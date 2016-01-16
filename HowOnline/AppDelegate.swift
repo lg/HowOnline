@@ -14,6 +14,8 @@ import ReachabilitySwift
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 
+	@IBOutlet weak var statusMenuItem: NSMenuItem!
+	@IBOutlet weak var menu: NSMenu!
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var aboutTitle: NSTextField!
 	
@@ -21,18 +23,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	var refreshTimer: NSTimer! = nil
 	var reachability: Reachability?
 	var prober: Prober!
-	let statusMenuItem = NSMenuItem(title: "Status: OK", action: nil, keyEquivalent: "")
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		let info = NSBundle.mainBundle().infoDictionary!
 		aboutTitle.stringValue = "\(info["CFBundleName"]!) v\(info["CFBundleShortVersionString"]!) (\(info["CFBundleVersion"]!))"
 		
-		let menu = NSMenu()
-		menu.addItem(statusMenuItem)
-		menu.addItem(NSMenuItem.separatorItem())
-		menu.addItemWithTitle("About", action: Selector("about"), keyEquivalent: "")
-		menu.addItemWithTitle("Quit", action: Selector("terminate:"), keyEquivalent: "q")
-		statusItem.menu = menu
+		// The menu is defined in interface builder
+		statusItem.menu = self.menu
 		
 		startReachability()
 		
@@ -41,8 +38,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 		probe()
 	}
 	
-	func about() {
-		window.makeKeyAndOrderFront(nil)
+	@IBAction func about(sender: AnyObject) {
+		window.makeKeyAndOrderFront(self)
+	}
+	
+	@IBAction func quit(sender: AnyObject) {
+		NSApplication.sharedApplication().terminate(self)
 	}
 	
 	func startReachability() {
