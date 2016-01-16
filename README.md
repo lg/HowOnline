@@ -1,4 +1,4 @@
-# HowOnline
+# HowOnline <img src='https://raw.githubusercontent.com/lg/HowOnline/master/HowOnline/Assets.xcassets/AppIcon.appiconset/icon64.png' width=32 />
 A quick app to display your current ping to google.com or detailed error info (such as not being able to ping 8.8.8.8, being on a self-assigned ip, broken dns, etc)
 
 <sub><sup>**The icon in the middle:**</sup></sub><br/>
@@ -28,7 +28,6 @@ A quick app to display your current ping to google.com or detailed error info (s
 
 ### Still to do
 - Tests
-- Get an icon made
 - Have an About dialog
 - List on the Mac App Store for free
 
