@@ -39,7 +39,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	}
 	
 	@IBAction func about(sender: AnyObject) {
-		window.makeKeyAndOrderFront(self)
+		window.makeKeyWindow()
+		
+		// Needed because we're a background app normally and we might appear behind active window
+		window.orderFrontRegardless()
 	}
 	
 	@IBAction func quit(sender: AnyObject) {
