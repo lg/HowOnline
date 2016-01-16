@@ -62,15 +62,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	
 	func probeResult(prober: Prober, result: Prober.ProbeResult) {
 		if let button = statusItem.button {
-			switch result {
-			case let .Success(text, longText):
-				button.image = imageForStatus(text, filledBar: true, imageSize: button.frame.size)
-				statusMenuItem.title = "Status: \(longText)"
-		
-			case let .Failure(text, longText):
-				button.image = imageForStatus(text, filledBar: false, imageSize: button.frame.size)
-				statusMenuItem.title = "Status: \(longText)"
-			}
+			button.image = imageForStatus(result.text, filledBar: result.success, imageSize: button.frame.size)
+			statusMenuItem.title = "Status: \(result.longText)"
 			
 			// Make the icon black and white, but this will also auto reverse colors in Dark/highlighted mode
 			button.image!.template = true

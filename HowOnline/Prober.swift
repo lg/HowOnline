@@ -14,10 +14,7 @@ protocol ProberDelegate {
 }
 
 class Prober {
-	enum ProbeResult {
-		case Success(text: String, longText: String)
-		case Failure(text: String, longText: String)
-	}
+	typealias ProbeResult = (success: Bool, text: String, longText: String)
 	
 	var delegate: ProberDelegate
 	var pinger: Pinger!
@@ -50,8 +47,7 @@ class Prober {
 		
 		probing = false
 		
-		switch result {
-		case .Success(_):
+		if result.success {
 			if curProbe == probes.count - 1 {
 				self.delegate.probeResult(self, result: result)
 			} else {
@@ -65,7 +61,7 @@ class Prober {
 				}
 			}
 			
-		case .Failure(_):
+		} else {
 			if curProbe == 0 {
 				self.delegate.probeResult(self, result: result)
 				self.lastFailure = nil
@@ -82,11 +78,11 @@ class Prober {
 		pinger = Pinger()
 		pinger.ping(ip) { [unowned self] (timeElapsedMs) -> () in
 			if timeElapsedMs == nil {
-				self.probeResult(.Failure(text: errorText, longText: longErrorText))
+				self.probeResult(ProbeResult(success: false, text: errorText, longText: longErrorText))
 				return
 			}
 			
-			self.probeResult(.Success(text: "\(timeElapsedMs!)ms", longText: "OK. Ping to Google: \(timeElapsedMs!)ms"))
+			self.probeResult(ProbeResult(success: true, text: "\(timeElapsedMs!)ms", longText: "OK. Ping to Google: \(timeElapsedMs!)ms"))
 		}
 	}
 	
@@ -94,37 +90,37 @@ class Prober {
 	
 	private func simpleChecks() {
 		guard let interface = CWWiFiClient()?.interface() else {
-			probeResult(.Failure(text: "wifi if", longText: "Couldn't detect a WiFi interface"))
+			self.probeResult(ProbeResult(success: false, text: "wifi if", longText: "Couldn't detect a WiFi interface"))
 			return
 		}
 		
 		guard interface.powerOn() else {
-			probeResult(.Failure(text: "wifi off", longText: "Your WiFi is turned off"))
+			self.probeResult(ProbeResult(success: false, text: "wifi off", longText: "Your WiFi is turned off"))
 			return
 		}
 		
 		guard interface.ssid() != nil else {
-			probeResult(.Failure(text: "no ssid", longText: "Not associated to a WiFi network"))
+			self.probeResult(ProbeResult(success: false, text: "no ssid", longText: "Not associated to a WiFi network"))
 			return
 		}
 		
 		guard let ip = getWiFiAddress() where ip.characters.count > 0 else {
-			probeResult(.Failure(text: "no ip", longText: "On WiFi, but no IP address assigned"))
+			self.probeResult(ProbeResult(success: false, text: "no ip", longText: "On WiFi, but no IP address assigned"))
 			return
 		}
 		
 		guard !ip.hasPrefix("169.254") && !ip.hasPrefix("0.0") else {
-			probeResult(.Failure(text: "self ip", longText: "On WiFi, but self-assigned IP"))
+			self.probeResult(ProbeResult(success: false, text: "self ip", longText: "On WiFi, but self-assigned IP"))
 			return
 		}
 		
 		guard let gatewayIP = defaultGateway() else {
-			probeResult(.Failure(text: "no gw", longText: "On WiFi, but no internet gateway assigned"))
+			self.probeResult(ProbeResult(success: false, text: "no gw", longText: "On WiFi, but no internet gateway assigned"))
 			return
 		}
 		self.gatewayIP = gatewayIP
 		
-		probeResult(.Success(text: "", longText: ""))
+		probeResult(ProbeResult(success: true, text: "", longText: ""))
 	}
 	
 	private func pingGateway() {
@@ -138,11 +134,11 @@ class Prober {
 	private func resolveGoogle() {
 		testResolveHostname("google.com") { [unowned self] (success) -> Void in
 			if !success {
-				self.probeResult(.Failure(text: "dns", longText: "Failed to do a DNS lookup for google.com"))
+				self.probeResult(ProbeResult(success: false, text: "dns", longText: "Failed to do a DNS lookup for google.com"))
 				return
 			}
 			
-			self.probeResult(.Success(text: "", longText: ""))
+			self.probeResult(ProbeResult(success: true, text: "", longText: ""))
 		}
 	}
 	
