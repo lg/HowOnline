@@ -14,7 +14,6 @@
 		CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */; };
 		CBD49E811C29B63A00CE6004 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */; };
 		CBD49E8C1C29B63A00CE6004 /* HowOnlineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E8B1C29B63A00CE6004 /* HowOnlineTests.swift */; };
-		CBD49E971C29B63A00CE6004 /* HowOnlineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */; };
 		CBD49EA51C2A161500CE6004 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD49EA41C2A161500CE6004 /* CoreWLAN.framework */; };
 		CBD49EAA1C2A209E00CE6004 /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EA91C2A209E00CE6004 /* getgateway.c */; };
 		CBD49EAE1C2A2A2700CE6004 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD49EAD1C2A2A2700CE6004 /* Utilities.m */; };
@@ -25,13 +24,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		CBD49E881C29B63A00CE6004 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD49E701C29B63A00CE6004 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CBD49E771C29B63A00CE6004;
-			remoteInfo = HowOnline;
-		};
-		CBD49E931C29B63A00CE6004 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBD49E701C29B63A00CE6004 /* Project object */;
 			proxyType = 1;
@@ -51,9 +43,6 @@
 		CBD49E871C29B63A00CE6004 /* HowOnlineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowOnlineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD49E8B1C29B63A00CE6004 /* HowOnlineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowOnlineTests.swift; sourceTree = "<group>"; };
 		CBD49E8D1C29B63A00CE6004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBD49E921C29B63A00CE6004 /* HowOnlineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowOnlineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowOnlineUITests.swift; sourceTree = "<group>"; };
-		CBD49E981C29B63A00CE6004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBD49EA41C2A161500CE6004 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
 		CBD49EA61C2A209D00CE6004 /* HowOnline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HowOnline-Bridging-Header.h"; sourceTree = "<group>"; };
 		CBD49EA91C2A209E00CE6004 /* getgateway.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getgateway.c; sourceTree = "<group>"; };
@@ -85,13 +74,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBD49E8F1C29B63A00CE6004 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -110,7 +92,6 @@
 				CBD49EA41C2A161500CE6004 /* CoreWLAN.framework */,
 				CBD49E7A1C29B63A00CE6004 /* HowOnline */,
 				CBD49E8A1C29B63A00CE6004 /* HowOnlineTests */,
-				CBD49E951C29B63A00CE6004 /* HowOnlineUITests */,
 				CBD49E791C29B63A00CE6004 /* Products */,
 				E2CE9A57345E825A12DE6176 /* Pods */,
 				9597B90647359D549200B0F7 /* Frameworks */,
@@ -122,7 +103,6 @@
 			children = (
 				CBD49E781C29B63A00CE6004 /* HowOnline.app */,
 				CBD49E871C29B63A00CE6004 /* HowOnlineTests.xctest */,
-				CBD49E921C29B63A00CE6004 /* HowOnlineUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,15 +131,6 @@
 				CBD49E8D1C29B63A00CE6004 /* Info.plist */,
 			);
 			path = HowOnlineTests;
-			sourceTree = "<group>";
-		};
-		CBD49E951C29B63A00CE6004 /* HowOnlineUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CBD49E961C29B63A00CE6004 /* HowOnlineUITests.swift */,
-				CBD49E981C29B63A00CE6004 /* Info.plist */,
-			);
-			path = HowOnlineUITests;
 			sourceTree = "<group>";
 		};
 		CBD49EB61C2A3FE100CE6004 /* Vendor */ = {
@@ -222,24 +193,6 @@
 			productReference = CBD49E871C29B63A00CE6004 /* HowOnlineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CBD49E911C29B63A00CE6004 /* HowOnlineUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CBD49EA11C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineUITests" */;
-			buildPhases = (
-				CBD49E8E1C29B63A00CE6004 /* Sources */,
-				CBD49E8F1C29B63A00CE6004 /* Frameworks */,
-				CBD49E901C29B63A00CE6004 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CBD49E941C29B63A00CE6004 /* PBXTargetDependency */,
-			);
-			name = HowOnlineUITests;
-			productName = HowOnlineUITests;
-			productReference = CBD49E921C29B63A00CE6004 /* HowOnlineUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -254,10 +207,6 @@
 						CreatedOnToolsVersion = 7.2;
 					};
 					CBD49E861C29B63A00CE6004 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = CBD49E771C29B63A00CE6004;
-					};
-					CBD49E911C29B63A00CE6004 = {
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = CBD49E771C29B63A00CE6004;
 					};
@@ -278,7 +227,6 @@
 			targets = (
 				CBD49E771C29B63A00CE6004 /* HowOnline */,
 				CBD49E861C29B63A00CE6004 /* HowOnlineTests */,
-				CBD49E911C29B63A00CE6004 /* HowOnlineUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -294,13 +242,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CBD49E851C29B63A00CE6004 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBD49E901C29B63A00CE6004 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,14 +321,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBD49E8E1C29B63A00CE6004 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBD49E971C29B63A00CE6004 /* HowOnlineUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -395,11 +328,6 @@
 			isa = PBXTargetDependency;
 			target = CBD49E771C29B63A00CE6004 /* HowOnline */;
 			targetProxy = CBD49E881C29B63A00CE6004 /* PBXContainerItemProxy */;
-		};
-		CBD49E941C29B63A00CE6004 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CBD49E771C29B63A00CE6004 /* HowOnline */;
-			targetProxy = CBD49E931C29B63A00CE6004 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -554,32 +482,6 @@
 			};
 			name = Release;
 		};
-		CBD49EA21C29B63A00CE6004 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HowOnlineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = HowOnline;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		CBD49EA31C29B63A00CE6004 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HowOnlineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = HowOnline;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -606,15 +508,6 @@
 			buildConfigurations = (
 				CBD49E9F1C29B63A00CE6004 /* Debug */,
 				CBD49EA01C29B63A00CE6004 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CBD49EA11C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnlineUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBD49EA21C29B63A00CE6004 /* Debug */,
-				CBD49EA31C29B63A00CE6004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

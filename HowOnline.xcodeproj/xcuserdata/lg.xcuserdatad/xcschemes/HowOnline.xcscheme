@@ -38,16 +38,6 @@
                ReferencedContainer = "container:HowOnline.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBD49E911C29B63A00CE6004"
-               BuildableName = "HowOnlineUITests.xctest"
-               BlueprintName = "HowOnlineUITests"
-               ReferencedContainer = "container:HowOnline.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
