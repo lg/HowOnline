@@ -9,8 +9,6 @@
 import Cocoa
 import ReachabilitySwift
 
-// TODO: about dialog
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 
@@ -46,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	}
 	
 	@IBAction func quit(sender: AnyObject) {
-		NSApplication.sharedApplication().terminate(self)
+		NSApp.terminate(nil)
 	}
 	
 	func startReachability() {

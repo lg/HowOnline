@@ -10,6 +10,11 @@
 		59C1AC54F1D79F556D882C22 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78743DDC081BE17430472CC /* Pods.framework */; };
 		CB8F4FDE1C2DA3F4009F0AB1 /* Prober.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */; };
 		CB97624D1C2A5D69003590F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9762401C2A5CC2003590F3 /* QuartzCore.framework */; };
+		CBCFAEC61C4B01FF00163967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCFAEC51C4B01FF00163967 /* AppDelegate.swift */; };
+		CBCFAEC81C4B01FF00163967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFAEC71C4B01FF00163967 /* Assets.xcassets */; };
+		CBCFAED31C4B097200163967 /* HowOnlineLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = CBCFAEC31C4B01FF00163967 /* HowOnlineLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBCFAED51C4B099C00163967 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCFAED41C4B099C00163967 /* ServiceManagement.framework */; };
+		CBCFAEDB1C4B10A000163967 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBCFAEDA1C4B10A000163967 /* MainMenu.xib */; };
 		CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */; };
 		CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */; };
 		CBD49E811C29B63A00CE6004 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */; };
@@ -32,10 +37,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CBCFAED21C4B095E00163967 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				CBCFAED31C4B097200163967 /* HowOnlineLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prober.swift; sourceTree = "<group>"; };
 		CB9762401C2A5CC2003590F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CBCFAEBE1C4AFEC500163967 /* HowOnline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HowOnline.entitlements; sourceTree = "<group>"; };
+		CBCFAEC31C4B01FF00163967 /* HowOnlineLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnlineLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBCFAEC51C4B01FF00163967 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CBCFAEC71C4B01FF00163967 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBCFAECC1C4B01FF00163967 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBCFAED01C4B021C00163967 /* HowOnlineLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HowOnlineLauncher.entitlements; sourceTree = "<group>"; };
+		CBCFAED41C4B099C00163967 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		CBCFAEDA1C4B10A000163967 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		CBD49E781C29B63A00CE6004 /* HowOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,10 +83,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CBCFAEC01C4B01FF00163967 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD49E751C29B63A00CE6004 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCFAED51C4B099C00163967 /* ServiceManagement.framework in Frameworks */,
 				CB97624D1C2A5D69003590F3 /* QuartzCore.framework in Frameworks */,
 				CBD49EA51C2A161500CE6004 /* CoreWLAN.framework in Frameworks */,
 				59C1AC54F1D79F556D882C22 /* Pods.framework in Frameworks */,
@@ -81,9 +114,22 @@
 		9597B90647359D549200B0F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBCFAED41C4B099C00163967 /* ServiceManagement.framework */,
 				E78743DDC081BE17430472CC /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBCFAEC41C4B01FF00163967 /* HowOnlineLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				CBCFAED01C4B021C00163967 /* HowOnlineLauncher.entitlements */,
+				CBCFAEC51C4B01FF00163967 /* AppDelegate.swift */,
+				CBCFAEC71C4B01FF00163967 /* Assets.xcassets */,
+				CBCFAECC1C4B01FF00163967 /* Info.plist */,
+				CBCFAEDA1C4B10A000163967 /* MainMenu.xib */,
+			);
+			path = HowOnlineLauncher;
 			sourceTree = "<group>";
 		};
 		CBD49E6F1C29B63A00CE6004 = {
@@ -93,6 +139,7 @@
 				CBD49EA41C2A161500CE6004 /* CoreWLAN.framework */,
 				CBD49E7A1C29B63A00CE6004 /* HowOnline */,
 				CBD49E8A1C29B63A00CE6004 /* HowOnlineTests */,
+				CBCFAEC41C4B01FF00163967 /* HowOnlineLauncher */,
 				CBD49E791C29B63A00CE6004 /* Products */,
 				E2CE9A57345E825A12DE6176 /* Pods */,
 				9597B90647359D549200B0F7 /* Frameworks */,
@@ -104,6 +151,7 @@
 			children = (
 				CBD49E781C29B63A00CE6004 /* HowOnline.app */,
 				CBD49E871C29B63A00CE6004 /* HowOnlineTests.xctest */,
+				CBCFAEC31C4B01FF00163967 /* HowOnlineLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +205,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CBCFAEC21C4B01FF00163967 /* HowOnlineLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBCFAECD1C4B01FF00163967 /* Build configuration list for PBXNativeTarget "HowOnlineLauncher" */;
+			buildPhases = (
+				CBCFAEBF1C4B01FF00163967 /* Sources */,
+				CBCFAEC01C4B01FF00163967 /* Frameworks */,
+				CBCFAEC11C4B01FF00163967 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HowOnlineLauncher;
+			productName = HowOnlineLauncher;
+			productReference = CBCFAEC31C4B01FF00163967 /* HowOnlineLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CBD49E771C29B63A00CE6004 /* HowOnline */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBD49E9B1C29B63A00CE6004 /* Build configuration list for PBXNativeTarget "HowOnline" */;
@@ -167,6 +232,7 @@
 				CBD49E761C29B63A00CE6004 /* Resources */,
 				363C6C38A14E812CC7339B47 /* Embed Pods Frameworks */,
 				9F05E63C7A32C7BD7659C107 /* Copy Pods Resources */,
+				CBCFAED21C4B095E00163967 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -205,6 +271,14 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Larry Gadea";
 				TargetAttributes = {
+					CBCFAEC21C4B01FF00163967 = {
+						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					CBD49E771C29B63A00CE6004 = {
 						CreatedOnToolsVersion = 7.2;
 						SystemCapabilities = {
@@ -234,11 +308,21 @@
 			targets = (
 				CBD49E771C29B63A00CE6004 /* HowOnline */,
 				CBD49E861C29B63A00CE6004 /* HowOnlineTests */,
+				CBCFAEC21C4B01FF00163967 /* HowOnlineLauncher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CBCFAEC11C4B01FF00163967 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBCFAEC81C4B01FF00163967 /* Assets.xcassets in Resources */,
+				CBCFAEDB1C4B10A000163967 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD49E761C29B63A00CE6004 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +390,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CBCFAEBF1C4B01FF00163967 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBCFAEC61C4B01FF00163967 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD49E741C29B63A00CE6004 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +442,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CBCFAECE1C4B01FF00163967 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HowOnlineLauncher/HowOnlineLauncher.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnlineLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CBCFAECF1C4B01FF00163967 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HowOnlineLauncher/HowOnlineLauncher.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HowOnlineLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lg.HowOnlineLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		CBD49E991C29B63A00CE6004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -496,6 +616,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CBCFAECD1C4B01FF00163967 /* Build configuration list for PBXNativeTarget "HowOnlineLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBCFAECE1C4B01FF00163967 /* Debug */,
+				CBCFAECF1C4B01FF00163967 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CBD49E731C29B63A00CE6004 /* Build configuration list for PBXProject "HowOnline" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

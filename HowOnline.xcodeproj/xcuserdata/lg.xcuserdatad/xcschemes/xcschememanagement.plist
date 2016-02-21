@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>HowOnlineLauncher.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>CBCFAEC21C4B01FF00163967</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CBD49E771C29B63A00CE6004</key>
 		<dict>
 			<key>primary</key>

@@ -1,8 +1,10 @@
 PODS:
   - ReachabilitySwift (2.3.3)
+  - StartAtLoginController (HEAD based on 0.0.1)
 
 DEPENDENCIES:
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
+  - StartAtLoginController (HEAD)
 
 EXTERNAL SOURCES:
   ReachabilitySwift:
@@ -15,5 +17,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
+  StartAtLoginController: 9ff14295bab38f7cba164a838349f6c0a2d83020
 
 COCOAPODS: 0.39.0
