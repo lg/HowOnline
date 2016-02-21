@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="aboutTitle" destination="dEh-vd-S1E" id="SuC-Vb-isj"/>
                 <outlet property="menu" destination="AX8-Ke-JOC" id="xh6-l9-pWm"/>
+                <outlet property="startAtLoginController" destination="bCX-Nl-Ri2" id="BZd-mn-4g4"/>
                 <outlet property="statusMenuItem" destination="XMF-z6-bQz" id="0rv-61-twc"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>

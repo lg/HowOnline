@@ -8,14 +8,15 @@
 
 import Cocoa
 import ReachabilitySwift
+import StartAtLoginController
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
-
 	@IBOutlet weak var statusMenuItem: NSMenuItem!
 	@IBOutlet weak var menu: NSMenu!
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var aboutTitle: NSTextField!
+    @IBOutlet weak var startAtLoginController: StartAtLoginController!
 	
 	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
 	var refreshTimer: NSTimer! = nil
@@ -25,6 +26,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		let info = NSBundle.mainBundle().infoDictionary!
 		aboutTitle.stringValue = "\(info["CFBundleName"]!) v\(info["CFBundleShortVersionString"]!) (\(info["CFBundleVersion"]!))"
+		
+		// Default the app to start on login the first time it launches
+		if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") {
+			NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
+			NSUserDefaults.standardUserDefaults().synchronize()
+			
+			startAtLoginController.startAtLogin = true
+		}
 		
 		// The menu is defined in interface builder
 		statusItem.menu = self.menu
