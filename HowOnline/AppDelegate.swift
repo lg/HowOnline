@@ -15,8 +15,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	@IBOutlet weak var statusMenuItem: NSMenuItem!
 	@IBOutlet weak var menu: NSMenu!
 	@IBOutlet weak var window: NSWindow!
-	@IBOutlet weak var aboutTitle: NSTextField!
-    @IBOutlet weak var startAtLoginController: StartAtLoginController!
+	@IBOutlet weak var startAtLoginController: StartAtLoginController!
+	
+	@IBOutlet var aboutGithubUrl: NSTextView!
+	@IBOutlet var aboutSponsoredUrl: NSTextView!
+	@IBOutlet var aboutTitle: NSTextField!
 	
 	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
 	var refreshTimer: NSTimer! = nil
@@ -34,6 +37,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 			
 			startAtLoginController.startAtLogin = true
 		}
+		// Auto-linking urls doesn't work automatically, plus only works when editable
+		aboutGithubUrl.checkTextInDocument(nil)
+		aboutGithubUrl.editable = false
+		aboutSponsoredUrl.checkTextInDocument(nil)
+		aboutSponsoredUrl.editable = false
 		
 		// The menu is defined in interface builder
 		statusItem.menu = self.menu
