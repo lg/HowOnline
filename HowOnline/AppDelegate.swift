@@ -47,10 +47,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	}
 	
 	@IBAction func about(sender: AnyObject) {
-		window.makeKeyWindow()
+
+		// window.makeKeyWindow()
 		
 		// Needed because we're a background app normally and we might appear behind active window
-		window.orderFrontRegardless()
+		// window.orderFrontRegardless()
+
+		NSApp.orderFrontStandardAboutPanel(nil);
+		
 	}
 	
 	@IBAction func quit(sender: AnyObject) {

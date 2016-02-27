@@ -15,6 +15,7 @@
 		CBCFAED31C4B097200163967 /* HowOnlineLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = CBCFAEC31C4B01FF00163967 /* HowOnlineLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CBCFAED51C4B099C00163967 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCFAED41C4B099C00163967 /* ServiceManagement.framework */; };
 		CBCFAEDB1C4B10A000163967 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBCFAEDA1C4B10A000163967 /* MainMenu.xib */; };
+		CBD0C7F61C822E0F00BA84AD /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CBD0C7F51C822E0F00BA84AD /* Credits.html */; };
 		CBD49E7C1C29B63A00CE6004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */; };
 		CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */; };
 		CBD49E811C29B63A00CE6004 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD49E7F1C29B63A00CE6004 /* MainMenu.xib */; };
@@ -61,6 +62,7 @@
 		CBCFAED01C4B021C00163967 /* HowOnlineLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HowOnlineLauncher.entitlements; sourceTree = "<group>"; };
 		CBCFAED41C4B099C00163967 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		CBCFAEDA1C4B10A000163967 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		CBD0C7F51C822E0F00BA84AD /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		CBD49E781C29B63A00CE6004 /* HowOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD49E7D1C29B63A00CE6004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		CBD49E7A1C29B63A00CE6004 /* HowOnline */ = {
 			isa = PBXGroup;
 			children = (
+				CBD0C7F51C822E0F00BA84AD /* Credits.html */,
 				CBCFAEBE1C4AFEC500163967 /* HowOnline.entitlements */,
 				CBD49EB61C2A3FE100CE6004 /* Vendor */,
 				CBD49E7B1C29B63A00CE6004 /* AppDelegate.swift */,
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD49E7E1C29B63A00CE6004 /* Assets.xcassets in Resources */,
+				CBD0C7F61C822E0F00BA84AD /* Credits.html in Resources */,
 				CBD49E811C29B63A00CE6004 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
