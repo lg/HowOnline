@@ -32,14 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 		probe()
 	}
 	
-	@IBAction func about(sender: AnyObject) {
-		NSApp.orderFrontStandardAboutPanel(nil);
-	}
-	
-	@IBAction func quit(sender: AnyObject) {
-		NSApp.terminate(nil)
-	}
-	
 	func startReachability() {
 		let refreshBlock: (Reachability) -> () = { reachability in
 			dispatch_async(dispatch_get_main_queue()) {

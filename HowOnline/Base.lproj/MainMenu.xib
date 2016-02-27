@@ -40,12 +40,12 @@
                 <menuItem title="About" id="yIp-af-xhq">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="about:" target="Voe-Tx-rLC" id="5YL-Ti-tfa"/>
+                        <action selector="orderFrontStandardAboutPanel:" target="-2" id="wpx-jx-cgh"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit" keyEquivalent="q" id="wcy-4y-yBX">
                     <connections>
-                        <action selector="quit:" target="Voe-Tx-rLC" id="8yv-M1-ldC"/>
+                        <action selector="terminate:" target="-2" id="aVf-b7-29i"/>
                     </connections>
                 </menuItem>
             </items>
