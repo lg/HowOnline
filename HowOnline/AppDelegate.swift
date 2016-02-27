@@ -14,12 +14,7 @@ import StartAtLoginController
 class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	@IBOutlet weak var statusMenuItem: NSMenuItem!
 	@IBOutlet weak var menu: NSMenu!
-	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var startAtLoginController: StartAtLoginController!
-	
-	@IBOutlet var aboutGithubUrl: NSTextView!
-	@IBOutlet var aboutSponsoredUrl: NSTextView!
-	@IBOutlet var aboutTitle: NSTextField!
 	
 	let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
 	var refreshTimer: NSTimer! = nil
@@ -27,15 +22,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	var prober: Prober!
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
-		let info = NSBundle.mainBundle().infoDictionary!
-		aboutTitle.stringValue = "\(info["CFBundleName"]!) v\(info["CFBundleShortVersionString"]!) (\(info["CFBundleVersion"]!))"
-		
-		// Auto-linking urls doesn't work automatically, plus only works when editable
-		aboutGithubUrl.checkTextInDocument(nil)
-		aboutGithubUrl.editable = false
-		aboutSponsoredUrl.checkTextInDocument(nil)
-		aboutSponsoredUrl.editable = false
-		
 		// The menu is defined in interface builder
 		statusItem.menu = self.menu
 		
@@ -47,14 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	}
 	
 	@IBAction func about(sender: AnyObject) {
-
-		// window.makeKeyWindow()
-		
-		// Needed because we're a background app normally and we might appear behind active window
-		// window.orderFrontRegardless()
-
 		NSApp.orderFrontStandardAboutPanel(nil);
-		
 	}
 	
 	@IBAction func quit(sender: AnyObject) {
