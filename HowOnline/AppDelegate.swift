@@ -30,13 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 		let info = NSBundle.mainBundle().infoDictionary!
 		aboutTitle.stringValue = "\(info["CFBundleName"]!) v\(info["CFBundleShortVersionString"]!) (\(info["CFBundleVersion"]!))"
 		
-		// Default the app to start on login the first time it launches
-		if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") {
-			NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
-			NSUserDefaults.standardUserDefaults().synchronize()
-			
-			startAtLoginController.startAtLogin = true
-		}
 		// Auto-linking urls doesn't work automatically, plus only works when editable
 		aboutGithubUrl.checkTextInDocument(nil)
 		aboutGithubUrl.editable = false
