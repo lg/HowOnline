@@ -25,7 +25,7 @@ func getWiFiAddress() -> String? {
 			if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
 				
 				// Check interface name:
-				if let name = String.fromCString(interface.ifa_name) where name == "en0" {
+				if let name = String.fromCString(interface.ifa_name) where name.hasPrefix("en") {
 					
 					// Convert interface address to a human readable string:
 					var addr = interface.ifa_addr.memory
@@ -34,6 +34,10 @@ func getWiFiAddress() -> String? {
 						&hostname, socklen_t(hostname.count),
 						nil, socklen_t(0), NI_NUMERICHOST)
 					address = String.fromCString(hostname)
+          
+          if let checkAddress = address where checkAddress != "" {
+            break
+          }
 				}
 			}
 		}

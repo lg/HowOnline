@@ -8,8 +8,6 @@
 #include "TargetConditionals.h"
 
 #include <net/route.h>
-#define TypeEN    "en0"
-
 #include <net/if.h>
 #include <string.h>
 
@@ -59,10 +57,10 @@ int getdefaultgateway(in_addr_t * addr)
                 if(((struct sockaddr_in *)sa_tab[RTAX_DST])->sin_addr.s_addr == 0) {
                         char ifName[128];
                         if_indextoname(rt->rtm_index,ifName);
-                        if(strcmp(TypeEN,ifName)==0){
-                            *addr = ((struct sockaddr_in *)(sa_tab[RTAX_GATEWAY]))->sin_addr.s_addr;
-                                r = 0;                        
-                        }
+
+                        // DEVIATION FROM STACKOVERFLOW: removed check for network adapter
+                        *addr = ((struct sockaddr_in *)(sa_tab[RTAX_GATEWAY]))->sin_addr.s_addr;
+                        r = 0;
                 }
             }
         }
