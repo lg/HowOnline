@@ -35,9 +35,9 @@ func getWiFiAddress() -> String? {
 						nil, socklen_t(0), NI_NUMERICHOST)
 					address = String.fromCString(hostname)
           
-          if let checkAddress = address where checkAddress != "" {
-            break
-          }
+					if let checkAddress = address where checkAddress != "" {
+						break
+					}
 				}
 			}
 		}
