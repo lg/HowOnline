@@ -16,8 +16,9 @@ protocol ProberDelegate {
 class Prober {
 	typealias ProbeResult = (success: Bool, text: String, longText: String)
 	
-	var delegate: ProberDelegate
-	var pinger: Pinger!
+	let delegate: ProberDelegate
+	let pinger: Pinger! = Pinger()
+	let portTester: PortTester! = PortTester()
 	var gatewayIP: String!
 	
 	var lastFailure: ProbeResult?
@@ -25,7 +26,7 @@ class Prober {
 	var probing: Bool = false
 
 	var probes: [() -> ()] {
-		return [simpleChecks, pingGateway, pingEightDotEight, resolveGoogle, pingGoogle]
+		return [simpleChecks, testGateway, pingEightDotEight, resolveGoogle, pingGoogle]
 	}
 	
 	init(delegate: ProberDelegate) {
@@ -75,8 +76,7 @@ class Prober {
 	}
 	
 	private func pingProbe(ip: String, errorText: String, longErrorText: String) {
-		pinger = Pinger()
-		pinger.ping(ip) { [unowned self] (timeElapsedMs) -> () in
+		pinger.ping(ip) { (timeElapsedMs) -> () in
 			if timeElapsedMs == nil {
 				self.probeResult(ProbeResult(success: false, text: errorText, longText: longErrorText))
 				return
@@ -123,8 +123,39 @@ class Prober {
 		probeResult(ProbeResult(success: true, text: "", longText: ""))
 	}
 	
-	private func pingGateway() {
-		pingProbe(self.gatewayIP, errorText: "ping gw", longErrorText: "Failed to ping your internet gateway")
+	private func testGateway() {
+		// Some gateways aren't pingable for whatever unspeakable reason. As such we'll ping
+		// it first, and if it fails we'll try a connection to port 22, 80 and
+		pinger.ping(self.gatewayIP) { (timeElapsedMs) -> () in
+			if timeElapsedMs == nil {
+				self.portTester.testPortOpen(self.gatewayIP, port: 80, timeoutSeconds: 2.0) { (success) -> () in
+					if success {
+						self.probeResult(ProbeResult(success: true, text: "", longText: ""))
+						return
+					}
+					
+					self.portTester.testPortOpen(self.gatewayIP, port: 22, timeoutSeconds: 2.0) { (success) -> () in
+						if success {
+							self.probeResult(ProbeResult(success: true, text: "", longText: ""))
+							return
+						}
+						
+						self.portTester.testPortOpen(self.gatewayIP, port: 23, timeoutSeconds: 2.0) { (success) -> () in
+							if success {
+								self.probeResult(ProbeResult(success: true, text: "", longText: ""))
+								return
+							}
+							
+							self.probeResult(ProbeResult(success: false, text: "bad gw", longText: "Gateway wasn't pingable or connectable via HTTP/SSH/Telnet"))
+						}
+					}
+				}
+				
+				return
+			}
+			
+			self.probeResult(ProbeResult(success: true, text: "", longText: ""))
+		}
 	}
 	
 	private func pingEightDotEight() {
@@ -132,7 +163,7 @@ class Prober {
 	}
 	
 	private func resolveGoogle() {
-		testResolveHostname("google.com") { [unowned self] (success) -> Void in
+		testResolveHostname("google.com") { (success) -> Void in
 			if !success {
 				self.probeResult(ProbeResult(success: false, text: "dns", longText: "Failed to do a DNS lookup for google.com"))
 				return

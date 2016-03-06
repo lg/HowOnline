@@ -20,7 +20,7 @@ A quick app to display your current ping to google.com or detailed error info (s
 - `no ip`: You're connected to a network, but you don't have an IP assigned (likely waiting for DHCP)
 - `self ip`: You're on a self-assigned IP, DHCP likely not working
 - `no gw`: You have a valid IP but no internet gateway was assigned (so you won't have internet access)
-- `ping gw`: Failed to ping your internet gateway (usually your router)
+- `bad gw`: Failed to ping your internet gateway (usually your router) or connect via HTTP/SSH/Telnet
 - `ping 8.`: Failed to ping 8.8.8.8, one of Google's DNS servers (no DNS lookup is done though)
 - `dns`: Failed to do a DNS lookup for google.com
 - `ping G`: Unable to ping google.com
