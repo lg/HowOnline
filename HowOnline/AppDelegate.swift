@@ -24,10 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		// The menu is defined in interface builder
 		statusItem.menu = self.menu
+		updateMenu(false, text: "hello", longText: "Hello")
 		
 		startReachability()
 		
-		refreshTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "probe", userInfo: nil, repeats: true)
+		refreshTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(probe), userInfo: nil, repeats: true)
 		prober = Prober(delegate: self)
 		probe()
 	}
@@ -55,9 +56,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, ProberDelegate {
 	}
 	
 	func probeResult(prober: Prober, result: Prober.ProbeResult) {
+		updateMenu(result.success, text: result.text, longText: result.longText)
+	}
+	
+	func updateMenu(success: Bool, text: String, longText: String) {
 		if let button = statusItem.button {
-			button.image = imageForStatus(result.text, filledBar: result.success, imageSize: button.frame.size)
-			statusMenuItem.title = "Status: \(result.longText)"
+			button.image = imageForStatus(text, filledBar: success, imageSize: button.frame.size)
+			statusMenuItem.title = "Status: \(longText)"
 			
 			// Make the icon black and white, but this will also auto reverse colors in Dark/highlighted mode
 			button.image!.template = true

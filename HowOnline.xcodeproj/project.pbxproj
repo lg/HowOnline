@@ -10,6 +10,7 @@
 		59C1AC54F1D79F556D882C22 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78743DDC081BE17430472CC /* Pods.framework */; };
 		CB8F4FDE1C2DA3F4009F0AB1 /* Prober.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */; };
 		CB97624D1C2A5D69003590F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9762401C2A5CC2003590F3 /* QuartzCore.framework */; };
+		CB9A10031D18C368007DD312 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CB9A10021D18C368007DD312 /* README.md */; };
 		CBA61AA21C8BC02C004B91AE /* PortTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA61AA11C8BC02C004B91AE /* PortTester.swift */; };
 		CBCFAEC61C4B01FF00163967 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCFAEC51C4B01FF00163967 /* AppDelegate.swift */; };
 		CBCFAEC81C4B01FF00163967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCFAEC71C4B01FF00163967 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		CB8F4FDD1C2DA3F4009F0AB1 /* Prober.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prober.swift; sourceTree = "<group>"; };
 		CB9762401C2A5CC2003590F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CB9A10021D18C368007DD312 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		CBA61AA11C8BC02C004B91AE /* PortTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortTester.swift; sourceTree = "<group>"; };
 		CBCFAEBE1C4AFEC500163967 /* HowOnline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HowOnline.entitlements; sourceTree = "<group>"; };
 		CBCFAEC31C4B01FF00163967 /* HowOnlineLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowOnlineLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				CBD49EA61C2A209D00CE6004 /* HowOnline-Bridging-Header.h */,
 				CBD49EAD1C2A2A2700CE6004 /* Utilities.m */,
 				CBD49EAF1C2A2B8B00CE6004 /* Utilities.swift */,
+				CB9A10021D18C368007DD312 /* README.md */,
 			);
 			path = HowOnline;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				CBD49EB01C2A2B8B00CE6004 /* Utilities.swift in Sources */,
 				CBD49EB31C2A322D00CE6004 /* SimplePing.m in Sources */,
 				CBD49EAA1C2A209E00CE6004 /* getgateway.c in Sources */,
+				CB9A10031D18C368007DD312 /* README.md in Sources */,
 				CB8F4FDE1C2DA3F4009F0AB1 /* Prober.swift in Sources */,
 				CBA61AA21C8BC02C004B91AE /* PortTester.swift in Sources */,
 			);

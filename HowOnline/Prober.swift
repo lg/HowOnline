@@ -21,7 +21,6 @@ class Prober {
 	let portTester: PortTester! = PortTester()
 	var gatewayIP: String!
 	
-	var lastFailure: ProbeResult?
 	var curProbe = 0
 	var probing: Bool = false
 
@@ -44,34 +43,22 @@ class Prober {
 	}
 	
 	private func probeResult(result: ProbeResult) {
-		// TODO: on failure, maybe just reset?
-		
 		probing = false
 		
 		if result.success {
+			// The last probe being successful means we should pass the actual success message
 			if curProbe == probes.count - 1 {
 				self.delegate.probeResult(self, result: result)
+			
+			// Otherwise, proceed to the next probe test
 			} else {
-				if let failure = self.lastFailure {
-					self.delegate.probeResult(self, result: failure)
-					self.lastFailure = nil
-					
-				} else {
-					curProbe++
-					probe()
-				}
+				curProbe += 1
+				probe()
 			}
 			
 		} else {
-			if curProbe == 0 {
-				self.delegate.probeResult(self, result: result)
-				self.lastFailure = nil
-				
-			} else {
-				self.lastFailure = result
-				curProbe--
-				probe()
-			}
+			curProbe = 0
+			self.delegate.probeResult(self, result: result)
 		}
 	}
 	

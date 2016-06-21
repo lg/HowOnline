@@ -23,12 +23,9 @@ A quick app to display your current ping to google.com or detailed error info (s
 - `bad gw`: Failed to ping your internet gateway (usually your router) or connect via HTTP/SSH/Telnet
 - `ping 8.`: Failed to ping 8.8.8.8, one of Google's DNS servers (no DNS lookup is done though)
 - `dns`: Failed to do a DNS lookup for google.com
+- `hello`: Welcome message when starting the app and waiting for a ping
 - `ping G`: Unable to ping google.com
 - *a number in miliseconds*: Your live ping to google.com
-
-### Still to do
-- Tests
-- List on the Mac App Store for free
 
 ### License
 BSD
