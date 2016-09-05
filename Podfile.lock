@@ -1,31 +1,20 @@
 PODS:
-  - CocoaAsyncSocket (7.4.3):
-    - CocoaAsyncSocket/All (= 7.4.3)
-  - CocoaAsyncSocket/All (7.4.3):
-    - CocoaAsyncSocket/GCD
-    - CocoaAsyncSocket/RunLoop
-  - CocoaAsyncSocket/GCD (7.4.3)
-  - CocoaAsyncSocket/RunLoop (7.4.3)
+  - CocoaAsyncSocket (7.5.0):
+    - CocoaAsyncSocket/GCD (= 7.5.0)
+  - CocoaAsyncSocket/GCD (7.5.0)
   - ReachabilitySwift (2.3.3)
-  - StartAtLoginController (HEAD based on 0.0.1)
+  - StartAtLoginController (0.0.1)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
-  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
-  - StartAtLoginController (HEAD)
-
-EXTERNAL SOURCES:
-  ReachabilitySwift:
-    :git: https://github.com/ashleymills/Reachability.swift
-
-CHECKOUT OPTIONS:
-  ReachabilitySwift:
-    :commit: 217ba79579efbfebd66691666b782ecd04fe5f5b
-    :git: https://github.com/ashleymills/Reachability.swift
+  - ReachabilitySwift
+  - StartAtLoginController
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
+  CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   StartAtLoginController: 9ff14295bab38f7cba164a838349f6c0a2d83020
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: f1558e6f590744aeee3fb49620453ec95725a402
+
+COCOAPODS: 1.0.1
